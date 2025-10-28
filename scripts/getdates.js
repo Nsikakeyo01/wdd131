@@ -1,11 +1,16 @@
-// Set the last modified date in "DD/MM/YYYY HH:MM:SS" format
-const lastModified = new Date(document.lastModified);
-const formattedDate = lastModified.toLocaleString("en-GB", {
-  day: "2-digit",
-  month: "2-digit",
-  year: "numeric",
-  hour: "2-digit",
-  minute: "2-digit",
-  second: "2-digit",
+// getdates.js
+// Populate current year and last modified date in the footer.
+// Use DOMContentLoaded so the DOM elements are available.
+document.addEventListener('DOMContentLoaded', function () {
+  // current year -> span with id="currentyear"
+  var yearSpan = document.getElementById('currentyear');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+
+  // last modified -> place into element with id="lastModifiedValue"
+  var lastModSpan = document.getElementById('lastModifiedValue');
+  if (lastModSpan) {
+    lastModSpan.textContent = document.lastModified || new Date().toLocaleString();
+  }
 });
-document.querySelector("#lastModified").textContent = formattedDate;
