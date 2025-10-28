@@ -15,14 +15,14 @@
   <!-- External CSS -->
   <link rel="stylesheet" href="styles/base.css">
 
-  <!-- JavaScript (deferred so DOM exists when script runs) -->
+  <!-- JavaScript -->
   <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
-  <!-- Skip link for keyboard users -->
+  <!-- Skip link for accessibility -->
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- Top header (blue bar with course title and highlighted name) -->
+  <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
       <h1 class="site-title">
@@ -32,7 +32,7 @@
       </h1>
     </div>
 
-    <!-- Navigation bar -->
+    <!-- Navigation -->
     <nav class="main-nav" aria-label="Primary navigation">
       <ul>
         <li><a href="#" aria-label="LinkedIn profile">LinkedIn</a></li>
@@ -43,9 +43,9 @@
     </nav>
   </header>
 
-  <!-- Main content area: two-column layout via grid -->
+  <!-- Main content -->
   <main id="main-content" class="page-main">
-    <!-- Left column: About Me card -->
+    <!-- About Me -->
     <section class="card about-me" aria-labelledby="about-heading">
       <h2 id="about-heading" class="card-title">About Me</h2>
 
@@ -61,7 +61,7 @@
 
           <div class="location-block">
             <figure class="flag-figure">
-              <img src="images/flag-of-nigeria.jpg" alt="official flag of nigeria" width="140" height="90">
+              <img src="images/flag-of-nigeria.jpg" alt="Official flag of Nigeria" width="140" height="90">
               <figcaption class="visually-hidden">Official Flag of Nigeria</figcaption>
             </figure>
 
@@ -75,15 +75,14 @@
           </div>
         </div>
 
-        <!-- Profile image on the right, aligned vertically with the text -->
+        <!-- Profile image -->
         <aside class="profile-figure" aria-label="Profile photo">
-          <!-- Replace with your actual profile image in images/profile.jpg -->
           <img src="images/profile.jpg" alt="Portrait of Nsikak Eyo" width="180" height="180">
         </aside>
       </div>
     </section>
 
-    <!-- Right column: Resources card (matches screenshot's right column) -->
+    <!-- Resources Section -->
     <section class="card resources" aria-labelledby="resources-heading">
       <h2 id="resources-heading" class="card-title">Web Dev Resources</h2>
 
@@ -97,19 +96,22 @@
           <li><a href="#" id="image-placeholder">Image Placeholder</a></li>
         </ul>
       </div>
+    </section>
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer">
     <p class="footer-top">
       <span aria-hidden="true">©</span>
       <span id="currentyear" class="footer-year"></span>
-      <span class="flower" aria-hidden="true"> 🌸 </span>
+      <span class="flower" aria-hidden="true">🌸</span>
       <span class="footer-name">Nsikak Eyo</span>
-      <span class="flower" aria-hidden="true"> 🌸 </span>
+      <span class="flower" aria-hidden="true">🌸</span>
       <span class="footer-location">Ikot Ekpene, Nigeria, West Africa</span>
     </p>
-    <p id="lastModified" class="footer-lastmod">Last Modification: <span id="lastModifiedValue"></span></p>
+    <p id="lastModified" class="footer-lastmod">
+      Last Modification: <span id="lastModifiedValue"></span>
+    </p>
   </footer>
 </body>
 </html>
