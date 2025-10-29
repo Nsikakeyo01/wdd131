@@ -1,0 +1,116 @@
+/* temples.css — Mobile First Design by Nsikak Eyo */
+
+/* --- General Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* --- Header --- */
+header {
+  background-color: #004080;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+/* --- Navigation --- */
+#menu-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+nav {
+  display: none;
+  flex-direction: column;
+  background-color: #004080;
+  width: 100%;
+}
+
+nav.show {
+  display: flex;
+}
+
+nav a {
+  color: white;
+  padding: 0.75rem;
+  text-align: center;
+  text-decoration: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav a:hover {
+  background-color: #0059b3;
+}
+
+/* --- Main --- */
+main {
+  max-width: 90%;
+  margin: 1.5rem auto;
+}
+
+main h2 {
+  text-align: center;
+  color: #004080;
+  margin-bottom: 1rem;
+}
+
+/* --- Gallery Grid --- */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+figure {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+figcaption {
+  padding: 0.75rem;
+  font-weight: 700;
+  color: #004080;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: #004080;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* --- Accessibility --- */
+a:focus {
+  outline: 2px dashed yellow;
+  outline-offset: 4px;
+}
