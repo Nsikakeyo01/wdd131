@@ -1,25 +1,16 @@
-// temples.js — Nsikak Eyo
+// temples.js
+document.addEventListener("DOMContentLoaded", () => {
+  const yearSpan = document.getElementById("year");
+  const lastModifiedSpan = document.getElementById("lastModified");
+  const menuButton = document.getElementById("menu-button");
+  const navMenu = document.getElementById("nav-menu");
 
-// Dynamic footer info
-const yearSpan = document.getElementById("year");
-const lastModifiedSpan = document.getElementById("lastModified");
-
-if (yearSpan) {
+  // Footer info
   yearSpan.textContent = new Date().getFullYear();
-}
-
-if (lastModifiedSpan) {
   lastModifiedSpan.textContent = document.lastModified;
-}
 
-// Responsive Hamburger Menu
-const menuButton = document.getElementById("menu-button");
-const navMenu = document.getElementById("nav-menu");
-
-if (menuButton && navMenu) {
+  // Mobile menu toggle
   menuButton.addEventListener("click", () => {
     navMenu.classList.toggle("show");
-    // Toggle symbol
-    menuButton.textContent = navMenu.classList.contains("show") ? "✖" : "☰";
   });
-}
+});
