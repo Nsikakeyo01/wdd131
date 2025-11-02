@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Sun -->
+  <circle cx="32" cy="32" r="10" fill="#FFD93B"/>
+  <!-- Rays -->
+  <g stroke="#FFD93B" stroke-width="3">
+    <line x1="32" y1="6" x2="32" y2="0"/>
+    <line x1="32" y1="64" x2="32" y2="58"/>
+    <line x1="6" y1="32" x2="0" y2="32"/>
+    <line x1="64" y1="32" x2="58" y2="32"/>
+    <line x1="12" y1="12" x2="7" y2="7"/>
+    <line x1="52" y1="52" x2="57" y2="57"/>
+    <line x1="12" y1="52" x2="7" y2="57"/>
+    <line x1="52" y1="12" x2="57" y2="7"/>
+  </g>
+  <!-- Cloud -->
+  <ellipse cx="40" cy="42" rx="14" ry="9" fill="#D3D3D3"/>
+  <ellipse cx="26" cy="44" rx="10" ry="7" fill="#E8E8E8"/>
+</svg>
