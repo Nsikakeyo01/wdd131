@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Temple Album by Nsikak Eyo. A beautiful interactive page showing temples with filters for old, new, large, and small temples using responsive design.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Temple Album by Nsikak Eyo — responsive, filterable temple cards showing name, location, dedication, area, and lazy-loaded images.">
   <meta name="author" content="Nsikak Eyo">
   <title>Temple Album | Nsikak Eyo</title>
+
   <link rel="stylesheet" href="styles/filtered-temples.css">
   <script src="scripts/filtered-temples.js" defer></script>
 </head>
-
 <body>
   <header>
     <h1>Temple Album</h1>
-    <nav>
+    <nav aria-label="Temple filters">
       <a href="#" id="home">Home</a>
       <a href="#" id="old">Old</a>
       <a href="#" id="new">New</a>
@@ -23,7 +23,7 @@
   </header>
 
   <main>
-    <section class="temples"></section>
+    <section id="templeContainer" class="temple-grid" aria-live="polite"></section>
   </main>
 
   <footer>
