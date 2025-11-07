@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Filtered temples picture album - Nsikak Eyo W04 assignment" />
+  <title>Filtered Temples — Nsikak Eyo</title>
+
+  <!-- Link external CSS -->
+  <link rel="stylesheet" href="styles/filtered-temples.css">
+
+</head>
+<body>
+  <header class="site-header">
+    <h1>Temple Picture Album</h1>
+    <p class="lead">Filter temples by age and size — lazy-loaded images and dynamic cards.</p>
+    <nav class="main-nav" aria-label="Temple Filters">
+      <ul>
+        <li><button class="filter-btn" data-filter="home" aria-pressed="true">Home</button></li>
+        <li><button class="filter-btn" data-filter="old">Old (before 1900)</button></li>
+        <li><button class="filter-btn" data-filter="new">New (after 2000)</button></li>
+        <li><button class="filter-btn" data-filter="large">Large (&gt; 90,000 ft²)</button></li>
+        <li><button class="filter-btn" data-filter="small">Small (&lt; 10,000 ft²)</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="temples-container" class="temples-grid" aria-live="polite">
+      <!-- JS will inject temple cards here -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p id="copyright"></p>
+    <p id="last-modified"></p>
+  </footer>
+
+  <!-- Link external JS -->
+  <script src="filtered-temples.js" defer></script>
+</body>
+</html>
