@@ -1,110 +1,125 @@
+// ===== Temple Data =====
 const temples = [
   {
     templeName: "Salt Lake Temple",
-    location: "Salt Lake City, Utah, United States",
-    dedicated: "1893, April, 6",
+    location: "Salt Lake City, Utah, USA",
+    dedicated: "1893, April 6",
     area: 253015,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/salt-lake-temple/salt-lake-temple-1-main.jpg"
-  },
-  {
-    templeName: "St. George Temple",
-    location: "St. George, Utah, United States",
-    dedicated: "1877, April, 6",
-    area: 110000,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/st-george-utah-temple/st-george-utah-temple-1-main.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/salt-lake-temple/salt-lake-temple-1.jpg"
   },
   {
     templeName: "Laie Hawaii Temple",
-    location: "Laie, Hawaii, United States",
-    dedicated: "1919, November, 27",
-    area: 42100,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/laie-hawaii-temple/laie-hawaii-temple-1-main.jpg"
+    location: "Laie, Hawaii, USA",
+    dedicated: "1919, November 27",
+    area: 42375,
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/laie-hawaii-temple/laie-hawaii-temple-1.jpg"
   },
   {
-    templeName: "Kirtland Temple",
-    location: "Kirtland, Ohio, United States",
-    dedicated: "1836, March, 27",
-    area: 8800,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/kirtland-temple/kirtland-temple-1-main.jpg"
-  },
-  {
-    templeName: "Cardston Alberta Temple",
-    location: "Cardston, Alberta, Canada",
-    dedicated: "1923, August, 26",
-    area: 88595,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/cardston-alberta-temple/cardston-alberta-temple-1-main.jpg"
+    templeName: "Nauvoo Illinois Temple",
+    location: "Nauvoo, Illinois, USA",
+    dedicated: "2002, June 27",
+    area: 54000,
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/nauvoo-illinois-temple/nauvoo-illinois-temple-1.jpg"
   },
   {
     templeName: "Rome Italy Temple",
     location: "Rome, Italy",
-    dedicated: "2019, March, 10",
+    dedicated: "2019, March 10",
     area: 41010,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/rome-italy-temple/rome-italy-temple-1-main.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/rome-italy-temple/rome-italy-temple-1.jpg"
   },
   {
     templeName: "Accra Ghana Temple",
     location: "Accra, Ghana",
-    dedicated: "2004, January, 11",
+    dedicated: "2004, January 11",
     area: 17500,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/accra-ghana-temple/accra-ghana-temple-1-main.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/accra-ghana-temple/accra-ghana-temple-1.jpg"
   },
   {
-    templeName: "Payson Utah Temple",
-    location: "Payson, Utah, United States",
-    dedicated: "2015, June, 7",
-    area: 96630,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/payson-utah-temple/payson-utah-temple-1-main.jpg"
+    templeName: "Aba Nigeria Temple",
+    location: "Aba, Nigeria",
+    dedicated: "2005, August 7",
+    area: 11500,
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/aba-nigeria-temple/aba-nigeria-temple-1.jpg"
   },
   {
-    templeName: "Provo City Center Temple",
-    location: "Provo, Utah, United States",
-    dedicated: "2016, March, 20",
-    area: 85084,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/provo-city-center-temple/provo-city-center-temple-1-main.jpg"
+    templeName: "Lima Peru Temple",
+    location: "Lima, Peru",
+    dedicated: "1986, January 10",
+    area: 9600,
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/lima-peru-temple/lima-peru-temple-1.jpg"
+  },
+  {
+    templeName: "Tokyo Japan Temple",
+    location: "Tokyo, Japan",
+    dedicated: "1980, October 27",
+    area: 52959,
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/tokyo-japan-temple/tokyo-japan-temple-1.jpg"
+  },
+  {
+    templeName: "Abidjan Ivory Coast Temple",
+    location: "Abidjan, Côte d'Ivoire",
+    dedicated: "2023, November 19",
+    area: 28600,
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/abidjan-ivory-coast-temple/abidjan-ivory-coast-temple-1.jpg"
   }
 ];
 
-const displayTemples = (filteredTemples) => {
-  const container = document.getElementById("templeCards");
+// ===== Function to Display Temples =====
+function displayTemples(filteredTemples) {
+  const container = document.getElementById("templeContainer");
   container.innerHTML = "";
 
-  filteredTemples.forEach((temple) => {
-    const card = document.createElement("section");
+  filteredTemples.forEach(temple => {
+    const card = document.createElement("div");
     card.classList.add("temple-card");
 
     card.innerHTML = `
-      <h2>${temple.templeName}</h2>
-      <p><span class="label">Location:</span> ${temple.location}</p>
-      <p><span class="label">Dedicated:</span> ${temple.dedicated}</p>
-      <p><span class="label">Size:</span> ${temple.area.toLocaleString()} sq ft</p>
       <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
+      <div class="temple-info">
+        <h2>${temple.templeName}</h2>
+        <p><strong>Location:</strong> ${temple.location}</p>
+        <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+        <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
+      </div>
     `;
-
     container.appendChild(card);
   });
-};
+}
 
-displayTemples(temples);
+// ===== Filtering Functions =====
+document.getElementById("home").addEventListener("click", (e) => {
+  e.preventDefault();
+  displayTemples(temples);
+});
 
-// Filters
-document.getElementById("home").addEventListener("click", () => displayTemples(temples));
-document.getElementById("old").addEventListener("click", () => {
+document.getElementById("old").addEventListener("click", (e) => {
+  e.preventDefault();
   const oldTemples = temples.filter(t => parseInt(t.dedicated.split(",")[0]) < 1900);
   displayTemples(oldTemples);
 });
-document.getElementById("new").addEventListener("click", () => {
+
+document.getElementById("new").addEventListener("click", (e) => {
+  e.preventDefault();
   const newTemples = temples.filter(t => parseInt(t.dedicated.split(",")[0]) > 2000);
   displayTemples(newTemples);
 });
-document.getElementById("large").addEventListener("click", () => {
+
+document.getElementById("large").addEventListener("click", (e) => {
+  e.preventDefault();
   const largeTemples = temples.filter(t => t.area > 90000);
   displayTemples(largeTemples);
 });
-document.getElementById("small").addEventListener("click", () => {
+
+document.getElementById("small").addEventListener("click", (e) => {
+  e.preventDefault();
   const smallTemples = temples.filter(t => t.area < 10000);
   displayTemples(smallTemples);
 });
 
-// Footer Date
-document.getElementById("currentYear").textContent = new Date().getFullYear();
+// ===== Footer Year & Last Modified =====
+document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = document.lastModified;
+
+// Display All on Load
+displayTemples(temples);
