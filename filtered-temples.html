@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Temple Album by Nsikak Eyo. A beautiful interactive page displaying various temples with filters for old, new, large, and small temples using responsive web design.">
+  <meta name="description" content="Temple Album by Nsikak Eyo. A beautiful interactive page showing temples with filters for old, new, large, and small temples using responsive design.">
   <meta name="author" content="Nsikak Eyo">
   <title>Temple Album | Nsikak Eyo</title>
   <link rel="stylesheet" href="styles/filtered-temples.css">
+  <script src="scripts/filtered-temples.js" defer></script>
 </head>
+
 <body>
   <header>
     <h1>Temple Album</h1>
@@ -21,14 +23,12 @@
   </header>
 
   <main>
-    <section class="temple-container" id="templeContainer"></section>
+    <section class="temples"></section>
   </main>
 
   <footer>
     <p>&copy; <span id="year"></span> | Nsikak Eyo</p>
     <p>Last Modified: <span id="lastModified"></span></p>
   </footer>
-
-  <script src="scripts/filtered-temples.js" defer></script>
 </body>
 </html>
