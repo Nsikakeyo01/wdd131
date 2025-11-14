@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nsikak Eyo | Recipes</title>
+    <link rel="stylesheet" href="styles/week6.css">
+</head>
+<body>
+    <header>
+        <h1>Nsikak Eyo's Nigerian Cuisines</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="references.html">References</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="filter">
+            <h2>Filter Recipes</h2>
+            <button onclick="filterRecipes('All')">All</button>
+            <button onclick="filterRecipes('Breakfast')">Breakfast</button>
+            <button onclick="filterRecipes('Lunch')">Lunch</button>
+            <button onclick="filterRecipes('Dinner')">Dinner</button>
+        </section>
+
+        <section class="recipe-list" id="recipeList">
+            <!-- Recipes will be dynamically generated here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nsikak Eyo | <a href="references.html">References</a></p>
+    </footer>
+
+    <script src="scripts/week6.js"></script>
+</body>
+</html>

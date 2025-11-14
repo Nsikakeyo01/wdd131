@@ -3,39 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nsikak Eyo's unique tech gadget website showcasing products, reviews, and contact information.">
-    <meta name="author" content="Nsikak Eyo">
-    <title>Nsikak Eyo Tech Gadgets</title>
+    <meta name="description" content="Nsikak Eyo's Nigerian Food Recipe Website showcasing traditional Nigerian cuisines.">
+    <title>Nsikak Eyo | Nigerian Cuisines</title>
     <link rel="stylesheet" href="styles/week6.css">
-    <script src="scripts/week6.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Nsikak Eyo's Tech Gadgets</h1>
+        <h1>Nsikak Eyo's Nigerian Cuisines</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="references.html">References</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <h2>Welcome to My Gadget World</h2>
-            <p>Discover, review, and learn about the latest tech gadgets in 2025.</p>
-            <img src="images/phone.jpeg" alt="Tech gadgets" loading="lazy">
+        <section class="intro">
+            <h2>Welcome!</h2>
+            <p>Explore the rich and delicious flavors of Nigerian cuisine. From Jollof Rice to Egusi Soup, discover recipes that are part of Nigeria’s culinary heritage.</p>
         </section>
 
-        <section class="products">
-            <h2>Featured Products</h2>
-            <div id="product-list"></div>
+        <section class="featured-recipes">
+            <h2>Featured Recipes</h2>
+            <div class="recipe-cards">
+                <div class="card">
+                    <img src="images/jollof.jpeg" alt="Jollof Rice" loading="lazy">
+                    <h3>Jollof Rice</h3>
+                    <p>A popular West African rice dish cooked in a tomato sauce with spices.</p>
+                </div>
+                <div class="card">
+                    <img src="images/egusi.jpeg" alt="Egusi Soup" loading="lazy">
+                    <h3>Egusi Soup</h3>
+                    <p>Made with melon seeds, spinach, and meat, this soup is hearty and delicious.</p>
+                </div>
+                <div class="card">
+                    <img src="images/akara.jpg" alt="Akara" loading="lazy">
+                    <h3>Akara</h3>
+                    <p>Fried bean cakes, perfect as a breakfast or snack.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form">
+            <h2>Submit Your Recipe</h2>
+            <form id="recipeForm">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="recipe">Recipe Name:</label>
+                <input type="text" id="recipe" required>
+
+                <label for="category">Category:</label>
+                <select id="category" required>
+                    <option value="">--Select--</option>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Dinner">Dinner</option>
+                </select>
+
+                <label for="instructions">Instructions:</label>
+                <textarea id="instructions" rows="4" required></textarea>
+
+                <button type="submit">Submit Recipe</button>
+            </form>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2025 Nsikak Eyo | <a href="references.html">References</a></p>
     </footer>
+
+    <script src="scripts/week6.js"></script>
 </body>
 </html>
