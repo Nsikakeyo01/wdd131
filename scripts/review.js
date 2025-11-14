@@ -7,10 +7,12 @@ const products = [
 ];
 
 // Populate product select
-const productSelect = document.getElementById('product');
-products.forEach(product => {
-    let option = document.createElement('option');
-    option.value = product.id;
-    option.textContent = product.name;
-    productSelect.appendChild(option);
+document.addEventListener('DOMContentLoaded', () => {
+    const productSelect = document.getElementById('product');
+    products.forEach(product => {
+        let option = document.createElement('option');
+        option.value = product.id;
+        option.textContent = product.name;
+        productSelect.appendChild(option);
+    });
 });

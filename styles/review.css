@@ -8,7 +8,7 @@ body {
 
 header, footer {
     text-align: center;
-    background-color: #0066cc;
+    background-color: #00509e;
     color: #fff;
     padding: 1em 0;
 }
@@ -20,7 +20,7 @@ header h1 {
 main {
     max-width: 600px;
     margin: 2em auto;
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 2em;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -45,7 +45,7 @@ textarea {
 
 input[type="submit"] {
     margin-top: 1.5em;
-    background-color: #0066cc;
+    background-color: #00509e;
     color: #fff;
     border: none;
     padding: 0.7em 1.5em;
@@ -54,7 +54,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #004999;
+    background-color: #003366;
 }
 
 .stars {
