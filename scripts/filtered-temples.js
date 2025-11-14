@@ -1,19 +1,79 @@
 /* scripts/filtered-temples.js
    Nsikak Eyo — W04 Picture Album Enhancement
-   10 temples (7 original + 3 added), images from picsum.photos seeds for reliable loading.
+   10 temples (7 original + 3 added)
 */
 
 const temples = [
-  { templeName: "Salt Lake Temple", location: "Salt Lake City, Utah, USA", dedicated: "April 6, 1893", area: 253015, imageUrl: "https://picsum.photos/seed/saltlake/800/500" },
-  { templeName: "St. George Temple", location: "St. George, Utah, USA", dedicated: "April 6, 1877", area: 26312, imageUrl: "https://picsum.photos/seed/stgeorge/800/500" },
-  { templeName: "Laie Hawaii Temple", location: "Laie, Hawaii, USA", dedicated: "November 27, 1919", area: 44703, imageUrl: "https://picsum.photos/seed/laie/800/500" },
-  { templeName: "Kirtland Temple", location: "Kirtland, Ohio, USA", dedicated: "March 27, 1836", area: 8900, imageUrl: "https://picsum.photos/seed/kirtland/800/500" },
-  { templeName: "Cardston Alberta Temple", location: "Cardston, Alberta, Canada", dedicated: "August 26, 1923", area: 88595, imageUrl: "https://picsum.photos/seed/cardston/800/500" },
-  { templeName: "Rome Italy Temple", location: "Rome, Italy", dedicated: "March 10, 2019", area: 41010, imageUrl: "https://picsum.photos/seed/rome/800/500" },
-  { templeName: "Accra Ghana Temple", location: "Accra, Ghana", dedicated: "January 11, 2004", area: 17500, imageUrl: "https://picsum.photos/seed/accra/800/500" },
-  { templeName: "Payson Utah Temple", location: "Payson, Utah, USA", dedicated: "June 7, 2015", area: 96630, imageUrl: "https://picsum.photos/seed/payson/800/500" },
-  { templeName: "Provo City Center Temple", location: "Provo, Utah, USA", dedicated: "March 20, 2016", area: 85084, imageUrl: "https://picsum.photos/seed/provo/800/500" },
-  { templeName: "Aba Nigeria Temple", location: "Aba, Nigeria", dedicated: "August 7, 2005", area: 11500, imageUrl: "https://picsum.photos/seed/aba/800/500" }
+  { 
+    templeName: "Salt Lake Temple",
+    location: "Salt Lake City, Utah, USA",
+    dedicated: "April 6, 1893",
+    area: 253015,
+    imageUrl: "https://churchofjesuschrist.org/imgs/57d247ad14f034889fe5bd13a35464af02f7d7f1/full/380%2C%20199/0/default"
+  },
+  { 
+    templeName: "St. George Temple",
+    location: "St. George, Utah, USA",
+    dedicated: "April 6, 1877",
+    area: 26312,
+    imageUrl: "https://churchofjesuschrist.org/imgs/4c4b47e225790fbcaa4a16e0fcb3c4124ccddb59/full/380%2C%20199/0/default"
+  },
+  { 
+    templeName: "Laie Hawaii Temple",
+    location: "Laie, Hawaii, USA",
+    dedicated: "November 27, 1919",
+    area: 44703,
+    imageUrl: "https://churchofjesuschrist.org/imgs/fc962f8acdd0ef18d54cec8034cc3cf580bf0db2/full/380%2C%20199/0/default"
+  },
+  { 
+    templeName: "Kirtland Temple",
+    location: "Kirtland, Ohio, USA",
+    dedicated: "March 27, 1836",
+    area: 8900,
+    imageUrl: "https://churchofjesuschrist.org/imgs/af272e4e0422610ec663b822a854c61419ae7087/full/380%2C%20199/0/default"
+  },
+  { 
+    templeName: "Cardston Alberta Temple",
+    location: "Cardston, Alberta, Canada",
+    dedicated: "August 26, 1923",
+    area: 88595,
+    imageUrl: "https://churchofjesuschrist.org/imgs/0c8b7f092d1a274fa31709a19d27e76d7fbbe5d2/full/380%2C%20199/0/default"
+  },
+  { 
+    templeName: "Rome Italy Temple",
+    location: "Rome, Italy",
+    dedicated: "March 10, 2019",
+    area: 41010,
+    imageUrl: "https://churchofjesuschrist.org/imgs/29cefa06979e11ed9dfdc6a43c4442b443c1c260/full/380%2C%20199/0/default"
+  },
+  { 
+    templeName: "Accra Ghana Temple",
+    location: "Accra, Ghana",
+    dedicated: "January 11, 2004",
+    area: 17500,
+    imageUrl: "https://churchofjesuschrist.org/imgs/1a177a58537c1df452f9d807959ddcf94bd39e8a/full/380%2C%20199/0/default"
+  },
+  { 
+    templeName: "Payson Utah Temple",
+    location: "Payson, Utah, USA",
+    dedicated: "June 7, 2015",
+    area: 96630,
+    imageUrl: "https://churchofjesuschrist.org/imgs/68a8d2fb79dfa8fb76e32b6d1d8ac82f32f031b6/full/380%2C%20199/0/default"
+  },
+  { 
+    templeName: "Provo City Center Temple",
+    location: "Provo, Utah, USA",
+    dedicated: "March 20, 2016",
+    area: 85084,
+    imageUrl: "https://churchofjesuschrist.org/imgs/8894d64b0e10b71fb97dc5a165e0ba2e807f0f7d/full/380%2C%20199/0/default"
+  },
+  { 
+    templeName: "Aba Nigeria Temple",
+    location: "Aba, Nigeria",
+    dedicated: "August 7, 2005",
+    area: 11500,
+    imageUrl: "https://churchofjesuschrist.org/imgs/56bbf5ad86fbd52bc6eddd557d8e7791ba0ccfd7/full/380%2C%20199/0/default"
+  }
 ];
 
 // helpers
@@ -55,12 +115,13 @@ function createCard(t){
   sizeVal.className = 'value';
   sizeVal.textContent = ` ${t.area.toLocaleString()} sq ft`;
 
-  // each label-value pair in block lines (to match sample)
   const line1 = document.createElement('div'); line1.appendChild(locLabel); line1.appendChild(locVal);
   const line2 = document.createElement('div'); line2.appendChild(dedLabel); line2.appendChild(dedVal);
   const line3 = document.createElement('div'); line3.appendChild(sizeLabel); line3.appendChild(sizeVal);
 
-  metaDiv.appendChild(line1); metaDiv.appendChild(line2); metaDiv.appendChild(line3);
+  metaDiv.appendChild(line1); 
+  metaDiv.appendChild(line2); 
+  metaDiv.appendChild(line3);
 
   const img = document.createElement('img');
   img.className = 'temple-img';
@@ -69,7 +130,6 @@ function createCard(t){
   img.loading = 'lazy';
   img.decoding = 'async';
 
-  // assemble: title, meta (labels), image (so labels appear above image like sample)
   card.appendChild(title);
   card.appendChild(metaDiv);
   card.appendChild(img);
@@ -93,14 +153,13 @@ function render(list){
 
 // filter handlers
 function showAll(){ render(temples); }
-function showOld(){ render(temples.filter(t => { const y = yearFromString(t.dedicated); return y && y < 1900; })); }
-function showNew(){ render(temples.filter(t => { const y = yearFromString(t.dedicated); return y && y > 2000; })); }
+function showOld(){ render(temples.filter(t => yearFromString(t.dedicated) < 1900)); }
+function showNew(){ render(temples.filter(t => yearFromString(t.dedicated) > 2000)); }
 function showLarge(){ render(temples.filter(t => t.area > 90000)); }
 function showSmall(){ render(temples.filter(t => t.area < 10000)); }
 
 // hookup
 document.addEventListener('DOMContentLoaded', () => {
-  // initial render
   showAll();
 
   document.getElementById('home').addEventListener('click', (e)=>{ e.preventDefault(); showAll(); });
@@ -109,7 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('large').addEventListener('click', (e)=>{ e.preventDefault(); showLarge(); });
   document.getElementById('small').addEventListener('click', (e)=>{ e.preventDefault(); showSmall(); });
 
-  // footer
   document.getElementById('year').textContent = new Date().getFullYear();
   document.getElementById('lastModified').textContent = document.lastModified || 'Unknown';
 });
