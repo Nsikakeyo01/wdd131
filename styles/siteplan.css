@@ -1,0 +1,50 @@
+/* Color Schema */
+:root {
+  --main-color: #E65100;       /* deep orange for headings and key highlights */
+  --background-color: #FFF8E1; /* warm cream for background */
+  --text-color: #1B1B1B;       /* main text color */
+  --highlight-color: #D32F2F;  /* red accent for buttons or links */
+}
+
+/* General Styles */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Verdana', sans-serif;
+  margin: 2rem;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  color: var(--main-color);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-family: 'Georgia', serif;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+p, li {
+  color: var(--text-color);
+}
+
+ul {
+  margin-left: 1.5rem;
+}
+
+/* Wireframe Styles */
+.wireframe {
+  border: 2px dashed var(--highlight-color);
+  padding: 1rem;
+  margin: 1rem 0;
+  text-align: center;
+  font-style: italic;
+  color: var(--highlight-color);
+}
