@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WDD 131 – Dynamic Web Fundamentals home page for Nsikak Eyo. Demonstrates HTML structure, CSS layout, and JavaScript for dynamic dates">
+  <meta name="author" content="Nsikak Eyo">
+  <title>WDD 131: Dynamic Web Fundamentals - Nsikak Eyo</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles/base.css">
+
+  <!-- JavaScript -->
+  <script src="scripts/getdates.js" defer></script>
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">
+        <span id="course-title">WDD 131: Dynamic Web Fundamentals</span>
+        <span class="title-sep"> - </span>
+        <span class="student-name">Nsikak Eyo</span>
+      </h1>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="#" aria-label="LinkedIn profile">LinkedIn</a></li>
+        <li><a href="https://byupw.instructure.com/" target="_blank" rel="noopener noreferrer">Canvas</a></li>
+        <li><a href="https://www.churchofjesuschrist.org/study/scriptures" target="_blank" rel="noopener noreferrer">Scripture</a></li>
+        <li><a href="#" aria-current="page">Final Project</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main id="main-content" class="page-main">
+    <!-- About Me -->
+    <section class="card about-me" aria-labelledby="about-heading">
+      <h2 id="about-heading" class="card-title">About Me</h2>
+
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            My name is <strong>Nsikak Eyo</strong>. I live in Ikot Ekpene, Nigeria, West Africa. I am a passionate web developer and student of BYU-PATHWAY.
+            I enjoy learning new technologies, playing football, reading, solving coding challenges, and building creative web applications. I love reading, exploring ideas, and working on meaningful projects that help people.
+          </p>
+
+          <h3 class="location-heading">Ikot Ekpene, Nigeria</h3>
+          <hr class="location-hr">
+
+          <div class="location-block">
+            <figure class="flag-figure">
+              <img src="images/flag-of-nigeria.jpg" alt="Official flag of Nigeria" width="140" height="90">
+              <figcaption class="visually-hidden">Official Flag of Nigeria</figcaption>
+            </figure>
+
+            <div class="location-text">
+              <p>
+                Nigeria is located in West Africa and is the most populous country on the continent.
+                Ikot Ekpene is a vibrant town in Akwa Ibom State, known for its rich cultural heritage and warm hospitality.
+                Nigeria is rich in culture, history, and natural resources, with vibrant people and diverse cultures and traditions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile image -->
+        <aside class="profile-figure" aria-label="Profile photo">
+          <img src="images/profile.jpg" alt="Portrait of Nsikak Eyo" width="180" height="180">
+        </aside>
+      </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="card resources" aria-labelledby="resources-heading">
+      <h2 id="resources-heading" class="card-title">Web Dev Resources</h2>
+
+      <div class="resources-body">
+        <ul class="resources-list">
+          <li><a href="https://dev.to/" target="_blank" rel="noopener noreferrer">Dev.to Community</a></li>
+          <li><a href="https://www.smashingmagazine.com/" target="_blank" rel="noopener noreferrer">Smashing Magazine</a></li>
+          <li><a href="https://css-tricks.com/" target="_blank" rel="noopener noreferrer">CSS Tricks</a></li>
+          <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">W3Schools</a></li>
+          <li><a href="https://www.udemy.com/" target="_blank" rel="noopener noreferrer">Udemy</a></li>
+          <li><a href="#" id="image-placeholder">Image Placeholder</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p class="footer-top">
+      <span aria-hidden="true">©</span>
+      <span id="currentyear" class="footer-year"></span>
+      <span class="flower" aria-hidden="true">🌸</span>
+      <span class="footer-name">Nsikak Eyo</span>
+      <span class="flower" aria-hidden="true">🌸</span>
+      <span class="footer-location">Ikot Ekpene, Nigeria, West Africa</span>
+    </p>
+    <p id="lastModified" class="footer-lastmod">
+      Last Modification: <span id="lastModifiedValue"></span>
+    </p>
+  </footer>
+</body>
+</html>
