@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nsikak's Product Review Form</title>
+    <link rel="stylesheet" href="styles/review.css">
+</head>
+<body>
+    <header>
+        <h1>Nsikak Eyo's Tech Gadget Reviews</h1>
+        <p>Share your experience with these amazing products!</p>
+    </header>
+
+    <main>
+        <form id="reviewForm" method="get" action="review.html">
+            <!-- Product Name -->
+            <label for="product">Product Name <span class="required">*</span></label>
+            <select id="product" name="product" required>
+                <option disabled selected>Select a Product ...</option>
+            </select>
+
+            <!-- Overall Rating -->
+            <fieldset>
+                <legend>Overall Rating <span class="required">*</span></legend>
+                <div class="stars">
+                    <input type="radio" id="star5" name="rating" value="5" required>
+                    <label for="star5">☆</label>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4">☆</label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3">☆</label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2">☆</label>
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1">☆</label>
+                </div>
+            </fieldset>
+
+            <!-- Date of Installation -->
+            <label for="installDate">Date of Installation <span class="required">*</span></label>
+            <input type="date" id="installDate" name="installDate" required>
+
+            <!-- Useful Features -->
+            <fieldset>
+                <legend>Features You Found Useful:</legend>
+                <input type="checkbox" id="feature1" name="features" value="ease-of-use">
+                <label for="feature1">Ease of Use</label>
+                <input type="checkbox" id="feature2" name="features" value="performance">
+                <label for="feature2">Performance</label>
+                <input type="checkbox" id="feature3" name="features" value="design">
+                <label for="feature3">Design</label>
+                <input type="checkbox" id="feature4" name="features" value="durability">
+                <label for="feature4">Durability</label>
+            </fieldset>
+
+            <!-- Written Review -->
+            <label for="review">Your Review:</label>
+            <textarea id="review" name="review" rows="5" placeholder="Write your thoughts here..."></textarea>
+
+            <!-- User Name -->
+            <label for="username">Your Name:</label>
+            <input type="text" id="username" name="username" placeholder="Optional">
+
+            <!-- Submit Button -->
+            <input type="submit" value="Submit Review">
+        </form>
+    </main>
+
+    <footer>
+        <p>Nsikak Eyo &copy; 2025 | WDD 131 Project</p>
+    </footer>
+
+    <script src="scripts/review.js"></script>
+</body>
+</html>
