@@ -1,116 +1,56 @@
+// Array of temple objects with requested image names
 const temples = [
-    {
-        name: "Salt Lake Temple",
-        location: "Salt Lake City, Utah",
-        dedicated: "April 6, 1893",
-        area: 253015,
-        imageUrl: "images/salt-lake.jpeg"
-    },
-    {
-        name: "St. George Temple",
-        location: "St. George, Utah",
-        dedicated: "April 6, 1877",
-        area: 142000,
-        imageUrl: "images/st-george.jpeg"
-    },
-    {
-        name: "Logan Utah Temple",
-        location: "Logan, Utah",
-        dedicated: "May 17, 1884",
-        area: 119619,
-        imageUrl: "images/logan.jpg"
-    },
-    {
-        name: "Manti Utah Temple",
-        location: "Manti, Utah",
-        dedicated: "May 21, 1888",
-        area: 100000,
-        imageUrl: "images/manti.jpg"
-    },
-    {
-        name: "Laie Hawaii Temple",
-        location: "Laie, Hawaii",
-        dedicated: "November 27, 1919",
-        area: 42000,
-        imageUrl: "images/laie.jpg"
-    },
-    {
-        name: "Cardston Alberta Temple",
-        location: "Cardston, Alberta, Canada",
-        dedicated: "August 26, 1923",
-        area: 88000,
-        imageUrl: "images/cardston.jpg"
-    },
-    {
-        name: "Mesa Arizona Temple",
-        location: "Mesa, Arizona",
-        dedicated: "October 23, 1927",
-        area: 75000,
-        imageUrl: "images/mesa.jpeg"
-    },
-
-    // ⭐ YOUR THREE ADDED TEMPLES ⭐
-    {
-        name: "Accra Ghana Temple",
-        location: "Accra, Ghana",
-        dedicated: "January 11, 2004",
-        area: 174500,
-        imageUrl: "images/accra.jpg"
-    },
-    {
-        name: "Aba Nigeria Temple",
-        location: "Aba, Nigeria",
-        dedicated: "August 7, 2005",
-        area: 28000,
-        imageUrl: "images/aba.jpg"
-    },
-    {
-        name: "Rome Italy Temple",
-        location: "Rome, Italy",
-        dedicated: "March 10, 2019",
-        area: 40000,
-        imageUrl: "images/rome.jpg"
-    }
+    { name: "Rome Italy Temple", location: "Rome, Italy", dedicated: 2019, area: 70000, img: "images/rome.jpg" },
+    { name: "Mesa Arizona Temple", location: "Mesa, Arizona", dedicated: 1927, area: 90000, img: "images/mesa.jpeg" },
+    { name: "Aba Nigeria Temple", location: "Aba, Nigeria", dedicated: 2005, area: 10000, img: "images/aba.jpg" },
+    { name: "Cardston Alberta Temple", location: "Cardston, Alberta, Canada", dedicated: 1923, area: 17000, img: "images/cardston.jpg" },
+    { name: "Accra Ghana Temple", location: "Accra, Ghana", dedicated: 2004, area: 10000, img: "images/accra.jpg" },
+    { name: "Laie Hawaii Temple", location: "Laie, Hawaii", dedicated: 1919, area: 38000, img: "images/laie.jpg" },
+    { name: "Manti Utah Temple", location: "Manti, Utah", dedicated: 1888, area: 88000, img: "images/manti.jpg" },
+    { name: "Logan Utah Temple", location: "Logan, Utah", dedicated: 1884, area: 88000, img: "images/logan.jpg" },
+    { name: "St. George Utah Temple", location: "St. George, Utah", dedicated: 1877, area: 11000, img: "images/st-george.jpeg" },
+    { name: "Salt Lake Temple", location: "Salt Lake City, Utah", dedicated: 1893, area: 253000, img: "images/salt-lake.jpeg" }
 ];
 
-function displayTemples(filteredTemples) {
-    const container = document.getElementById("temple-container");
+// Function to render temple cards
+function renderTemples(filter = "home") {
+    const container = document.getElementById("temple-grid");
     container.innerHTML = "";
 
-    filteredTemples.forEach(temple => {
-        const card = document.createElement("div");
-        card.classList.add("card");
+    temples.forEach(temple => {
+        let show = false;
+        if(filter === "home") show = true;
+        else if(filter === "old" && temple.dedicated < 1900) show = true;
+        else if(filter === "new" && temple.dedicated > 2000) show = true;
+        else if(filter === "large" && temple.area > 90000) show = true;
+        else if(filter === "small" && temple.area < 10000) show = true;
 
-        card.innerHTML = `
-            <h3>${temple.name}</h3>
-            <img src="${temple.imageUrl}" alt="${temple.name}" loading="lazy">
-            <p><strong>Location:</strong> ${temple.location}</p>
-            <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
-            <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
-        `;
-
-        container.appendChild(card);
+        if(show) {
+            const card = document.createElement("div");
+            card.classList.add("temple-card");
+            card.innerHTML = `
+                <img src="${temple.img}" alt="${temple.name}" loading="lazy">
+                <h2>${temple.name}</h2>
+                <p>Location: ${temple.location}</p>
+                <p>Dedicated: ${temple.dedicated}</p>
+                <p>Area: ${temple.area.toLocaleString()} sq ft</p>
+            `;
+            container.appendChild(card);
+        }
     });
 }
 
-// Filters
-document.getElementById("home").addEventListener("click", () => displayTemples(temples));
-document.getElementById("old").addEventListener("click", () =>
-    displayTemples(temples.filter(t => new Date(t.dedicated).getFullYear() < 1900))
-);
-document.getElementById("new").addEventListener("click", () =>
-    displayTemples(temples.filter(t => new Date(t.dedicated).getFullYear() > 2000))
-);
-document.getElementById("large").addEventListener("click", () =>
-    displayTemples(temples.filter(t => t.area > 90000))
-);
-document.getElementById("small").addEventListener("click", () =>
-    displayTemples(temples.filter(t => t.area < 10000))
-);
+// Initial render
+renderTemples();
 
-// Footer
+// Navigation filter event listeners
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", e => {
+        e.preventDefault();
+        renderTemples(link.textContent.toLowerCase());
+    });
+});
+
+// Footer copyright and last modified
 document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("lastModified").textContent = document.lastModified;
-
-// Load all temples on start
-displayTemples(temples);
+document.getElementById("last-modified").textContent = document.lastModified;
