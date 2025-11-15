@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Temple Album by Nsikak Eyo — responsive, filterable temple cards showing name, location, dedication, area, and lazy-loaded images.">
-  <meta name="author" content="Nsikak Eyo">
-  <title>Temple Album | Nsikak Eyo</title>
-
-  <link rel="stylesheet" href="styles/filtered-temples.css">
-  <script src="scripts/filtered-temples.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temple Album</title>
+    <link rel="stylesheet" href="styles/filtered-temples.css" />
 </head>
 <body>
-  <header>
-    <h1>Temple Album</h1>
-    <nav aria-label="Temple filters">
-      <a href="#" id="home">Home</a>
-      <a href="#" id="old">Old</a>
-      <a href="#" id="new">New</a>
-      <a href="#" id="large">Large</a>
-      <a href="#" id="small">Small</a>
-    </nav>
-  </header>
+    <header>
+        <h1>Temple Album</h1>
+        <nav>
+            <button id="home">Home</button>
+            <button id="old">Old (Before 1900)</button>
+            <button id="new">New (After 2000)</button>
+            <button id="large">Large (>90k sq ft)</button>
+            <button id="small">Small (<10k sq ft)</button>
+        </nav>
+    </header>
 
-  <main>
-    <section id="templeContainer" class="temple-grid" aria-live="polite"></section>
-  </main>
+    <main>
+        <div id="temple-container" class="grid"></div>
+    </main>
 
-  <footer>
-    <p>&copy; <span id="year"></span> | Nsikak Eyo</p>
-    <p>Last Modified: <span id="lastModified"></span></p>
-  </footer>
+    <footer>
+        <p>&copy; <span id="year"></span> Nsikak Eyo</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+
+    <script src="scripts/filtered-temples.js"></script>
 </body>
 </html>
