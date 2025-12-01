@@ -39,7 +39,7 @@ ul {
   margin-left: 1.5rem;
 }
 
-/* Wireframe Styles */
+/* Wireframe Box Styling */
 .wireframe {
   border: 2px dashed var(--highlight-color);
   padding: 1rem;
@@ -47,4 +47,23 @@ ul {
   text-align: center;
   font-style: italic;
   color: var(--highlight-color);
+  background-color: #ffffff;
+}
+
+/* Wireframe Image Styles */
+.wireframe img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border: 1px solid var(--highlight-color);
+  border-radius: 8px;
+}
+
+/* Specific classes for mobile and desktop wireframes */
+.wireframe-mobile img {
+  max-width: 350px; /* keeps mobile sketch small */
+}
+
+.wireframe-desktop img {
+  max-width: 700px; /* wider for desktop mockup */
 }
