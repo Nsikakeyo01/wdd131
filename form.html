@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nsikak's Product Review Form</title>
-    <meta name="description" content="Nsikak Eyo's unique product review form for gadgets with ratings, feedback, and installation date.">
+    <title>Product Review Form | WDD 131</title>
+    <meta name="description" content="Product review form for WDD 131.">
     <meta name="author" content="Nsikak Eyo">
+
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/script.js" defer></script>
 </head>
+
 <body>
     <header>
-        <h1>Nsikak Eyo's Tech Gadget Reviews</h1>
-        <p>Share your experience with these amazing products!</p>
+        <h1>Product Review Form</h1>
+        <p>Share your experience with your selected product.</p>
     </header>
 
     <main>
-        <form id="reviewForm" method="get" action="review.html">
+        <form method="get" action="review.html">
+
             <!-- Product Name -->
             <label for="product">Product Name <span class="required">*</span></label>
             <select id="product" name="product" required>
@@ -29,12 +32,16 @@
                 <div class="stars">
                     <input type="radio" id="star5" name="rating" value="5" required>
                     <label for="star5">☆</label>
+
                     <input type="radio" id="star4" name="rating" value="4" required>
                     <label for="star4">☆</label>
+
                     <input type="radio" id="star3" name="rating" value="3" required>
                     <label for="star3">☆</label>
+
                     <input type="radio" id="star2" name="rating" value="2" required>
                     <label for="star2">☆</label>
+
                     <input type="radio" id="star1" name="rating" value="1" required>
                     <label for="star1">☆</label>
                 </div>
@@ -46,23 +53,27 @@
 
             <!-- Useful Features -->
             <fieldset>
-                <legend>Features You Found Useful:</legend>
-                <input type="checkbox" id="feature1" name="features" value="ease-of-use">
+                <legend>Useful Features</legend>
+
+                <input type="checkbox" id="feature1" name="features" value="Ease of Use">
                 <label for="feature1">Ease of Use</label>
-                <input type="checkbox" id="feature2" name="features" value="performance">
+
+                <input type="checkbox" id="feature2" name="features" value="Performance">
                 <label for="feature2">Performance</label>
-                <input type="checkbox" id="feature3" name="features" value="design">
+
+                <input type="checkbox" id="feature3" name="features" value="Design">
                 <label for="feature3">Design</label>
-                <input type="checkbox" id="feature4" name="features" value="durability">
+
+                <input type="checkbox" id="feature4" name="features" value="Durability">
                 <label for="feature4">Durability</label>
             </fieldset>
 
             <!-- Written Review -->
-            <label for="review">Your Review:</label>
+            <label for="review">Written Review</label>
             <textarea id="review" name="review" rows="5" placeholder="Write your thoughts here..."></textarea>
 
             <!-- User Name -->
-            <label for="username">Your Name:</label>
+            <label for="username">Your Name</label>
             <input type="text" id="username" name="username" placeholder="Optional">
 
             <!-- Submit Button -->
@@ -71,7 +82,7 @@
     </main>
 
     <footer>
-        <p>Nsikak Eyo &copy; 2025 | WDD 131 Project</p>
+        <p>&copy; 2025 | Nsikak Eyo | WDD 131</p>
     </footer>
 </body>
 </html>
