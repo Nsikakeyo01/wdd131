@@ -1,5 +1,3 @@
-
-// Product Array (required by instructions)
 const products = [
     { id: "fc-1888", name: "Flux Capacitor" },
     { id: "fc-2050", name: "Power Laces" },
@@ -8,13 +6,11 @@ const products = [
     { id: "jj-1969", name: "Warp Equalizer" }
 ];
 
-// Populate Product Select Dropdown
 document.addEventListener("DOMContentLoaded", () => {
     const productSelect = document.querySelector("#product");
-
-    products.forEach((product) => {
+    products.forEach(product => {
         const option = document.createElement("option");
-        option.value = product.id; // Assignment requires value = id
+        option.value = product.id;
         option.textContent = product.name;
         productSelect.appendChild(option);
     });

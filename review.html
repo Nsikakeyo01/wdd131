@@ -4,32 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review Confirmation | WDD 131</title>
-    <meta name="description" content="Review confirmation page for WDD 131.">
+    <meta name="description" content="Confirmation page for Nsikak Eyo's BYU-I style product review form submissions.">
     <meta name="author" content="Nsikak Eyo">
 
     <link rel="stylesheet" href="styles/style.css">
 
     <script defer>
-        // Review counter
         let count = Number(localStorage.getItem('reviewCount')) || 0;
         count++;
         localStorage.setItem('reviewCount', count);
-
         document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("reviewCount").textContent = count;
         });
     </script>
 </head>
-
 <body>
     <header>
         <h1>Thank You!</h1>
-        <p>Your review has been submitted successfully.</p>
+        <p>Your review has been successfully submitted.</p>
     </header>
 
     <main>
         <p>Total reviews completed on this browser: <span id="reviewCount">0</span></p>
-
         <a href="form.html" class="button">Submit Another Review</a>
     </main>
 
